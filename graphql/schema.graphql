@@ -22,6 +22,11 @@ type Query {
         "Filters by name. Accepts SQL LIKE wildcards `%` and `_`."
         name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10)
+
+    tasks(
+        name: String @where(operator: "like")
+        status: String @where(operator: "eq")
+    ): [Task!]! @paginate(defaultCount: 10) @guard
 }
 
 "Account of a person who utilizes this application."
@@ -42,5 +47,13 @@ type User {
     created_at: DateTime!
 
     "When the account was last updated."
+    updated_at: DateTime!
+}
+
+type Task {
+    id: ID!
+    name: String!
+    status: String!
+    created_at: DateTime!
     updated_at: DateTime!
 }
