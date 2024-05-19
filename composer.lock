@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aeff3685d67659cda9557706b5cb7a23",
+    "content-hash": "e57bad92fcdbef74f51d4de7cfe2aa0b",
     "packages": [
         {
             "name": "brick/math",
@@ -134,6 +134,78 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "daniel-de-wit/lighthouse-sanctum",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daniel-de-wit/lighthouse-sanctum.git",
+                "reference": "554e55d1c5ae3f34bb59f874180a70f580321452"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/daniel-de-wit/lighthouse-sanctum/zipball/554e55d1c5ae3f34bb59f874180a70f580321452",
+                "reference": "554e55d1c5ae3f34bb59f874180a70f580321452",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^9 || ^10 || ^11",
+                "illuminate/contracts": "^9 || ^10 || ^11",
+                "illuminate/database": "^9 || ^10 || ^11",
+                "illuminate/routing": "^9 || ^10 || ^11",
+                "illuminate/support": "^9 || ^10 || ^11",
+                "laravel/sanctum": "^3.0 || ^4.0",
+                "nuwave/lighthouse": "^6.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "kubawerlos/php-cs-fixer-custom-fixers": "^3.14",
+                "mockery/mockery": "^1.5",
+                "nunomaduro/larastan": "^2.0",
+                "orchestra/testbench": "^8.0",
+                "orchestra/testbench-core": "^8.0",
+                "phpstan/phpstan-mockery": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^10.0",
+                "rector/rector": "^0.15.25"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DanielDeWit\\LighthouseSanctum\\Providers\\LighthouseSanctumServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DanielDeWit\\LighthouseSanctum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel de Wit",
+                    "email": "daniel@danieldewit.nl"
+                }
+            ],
+            "description": "Laravel Sanctum support for Laravel Lighthouse.",
+            "homepage": "https://github.com/daniel-de-wit/lighthouse-sanctum",
+            "keywords": [
+                "laravel-sanctum",
+                "lighthouse",
+                "lighthouse-sanctum"
+            ],
+            "support": {
+                "issues": "https://github.com/daniel-de-wit/lighthouse-sanctum/issues",
+                "source": "https://github.com/daniel-de-wit/lighthouse-sanctum/tree/3.1.0"
+            },
+            "time": "2024-03-27T08:12:11+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
