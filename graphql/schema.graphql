@@ -28,7 +28,10 @@ type Query {
 
 type Mutation @guard {
     "Create a new task for the current user."
-    createTask("The name of the task." name: String!): Task
+    createTask(
+        "The name of the task."
+        name: String! @rules(apply: ["App\\Rules\\UniqueForUser"])
+    ): Task
         @create
         @inject(context: "user.id", name: "user_id")
 
