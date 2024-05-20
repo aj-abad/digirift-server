@@ -15,4 +15,9 @@ class Task extends Model
         'name',
         'status',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
