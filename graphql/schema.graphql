@@ -23,8 +23,22 @@ type Query {
         name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10)
 
-
     me: User @auth
+}
+
+type Mutation @guard {
+    "Create a new task for the current user."
+    createTask("The name of the task." name: String!): Task
+        @create
+        @inject(context: "user.id", name: "user_id")
+
+    "Update a task"
+    updateTask(
+        id: ID!
+        name: String
+        status: String @in(values: ["todo", "done"])
+        user_id: ID
+    ): Task @update @inject(context: "user.id", name: "user_id")
 }
 
 "Account of a person who utilizes this application."
@@ -54,6 +68,7 @@ type User {
 type Task {
     id: ID!
     name: String!
+    user_id: ID!
     status: String!
     created_at: DateTime!
     updated_at: DateTime!
