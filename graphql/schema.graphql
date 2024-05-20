@@ -23,10 +23,8 @@ type Query {
         name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10)
 
-    tasks(
-        name: String @where(operator: "like")
-        status: String @where(operator: "eq")
-    ): [Task!]! @paginate(defaultCount: 10) @guard
+
+    me: User @auth
 }
 
 "Account of a person who utilizes this application."
@@ -48,6 +46,9 @@ type User {
 
     "When the account was last updated."
     updated_at: DateTime!
+
+    "Tasks created by the user."
+    tasks: [Task!]! @hasMany
 }
 
 type Task {
