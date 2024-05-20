@@ -46,4 +46,9 @@ class User extends Authenticatable implements ContractsHasApiTokens
             'password' => 'hashed',
         ];
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }
