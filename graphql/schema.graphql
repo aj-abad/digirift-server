@@ -37,11 +37,14 @@ type Mutation @guard {
 
     "Update a task"
     updateTask(
-        id: ID!
+        id: ID! @eq
         name: String
         status: String @rules(apply: ["in:todo,done"])
         user_id: ID
-    ): Task @update @inject(context: "user.id", name: "user_id")
+    ): Task @update @inject(context: "user.id", name: "user_id") @can(ability: "update", model: "App\\Models\\Task", find: "id")
+
+    "Delete a task"
+    deleteTask(id: ID! @eq): Task @delete @inject(context: "user.id", name: "user_id") @can(ability: "delete", model: "App\\Models\\Task", find: "id")
 }
 
 "Account of a person who utilizes this application."
