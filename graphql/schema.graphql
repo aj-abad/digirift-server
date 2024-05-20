@@ -36,7 +36,7 @@ type Mutation @guard {
     updateTask(
         id: ID!
         name: String
-        status: String @in(values: ["todo", "done"])
+        status: String @rules(apply: ["in:todo,done"])
         user_id: ID
     ): Task @update @inject(context: "user.id", name: "user_id")
 }
